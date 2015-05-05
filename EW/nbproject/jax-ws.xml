@@ -2,10 +2,10 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
-    <client name="pruebaBean">
-      <wsdl-url>http://155.210.68.154:8080/pruebaBean/pruebaBean?wsdl</wsdl-url>
-      <local-wsdl-file>155.210.68.154_8080/pruebaBean/pruebaBean.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">WebServices</package-name>
+    <client name="ServiceRegistroAutenticacion">
+      <wsdl-url>http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">clients</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -22,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://155.210.68.154:8080/pruebaBean/pruebaBean?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -34,7 +34,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>WebServices</wsimport-option-value>
+          <wsimport-option-value>clients</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

@@ -5,7 +5,7 @@
  */
 package Usuario;
 
-import WebServices.PruebaBean_Service;
+import clients.ServiceRegistroAutenticacion_Service;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,8 +19,8 @@ import javax.xml.ws.WebServiceRef;
  * @author Ricardo
  */
 public class Login extends HttpServlet {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/155.210.68.154_8080/pruebaBean/pruebaBean.wsdl")
-    private PruebaBean_Service service;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl")
+    private ServiceRegistroAutenticacion_Service service;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -81,6 +81,8 @@ public class Login extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String password = request.getParameter("password");
         
+        System.out.println("el nombre es " + nombre + " con passs " + password);
+        
         System.out.println("¿El usuario entra?: " + comprobarLogin(nombre, password) );
     }
 
@@ -97,8 +99,9 @@ public class Login extends HttpServlet {
     private boolean comprobarLogin(java.lang.String email, java.lang.String password) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        WebServices.PruebaBean port = service.getPruebaBeanPort();
+        clients.ServiceRegistroAutenticacion port = service.getServiceRegistroAutenticacionPort();
         return port.comprobarLogin(email, password);
     }
+
 
 }
