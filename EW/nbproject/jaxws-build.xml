@@ -28,7 +28,7 @@
     </target>
     <target name="wsimport-client-ServiceRegistroAutenticacion" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion" destdir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServiceRegistroAutenticacion/wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?WSDL" xnocompile="true" xendorsed="true" package="clients">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion" destdir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServiceRegistroAutenticacion/wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?WSDL" xnocompile="true" xendorsed="true" package="clientes_WS">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServiceRegistroAutenticacion/wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion"/>
         </wsimport>
@@ -39,8 +39,24 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-ServiceRegistroAutenticacion" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/clients"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/clientes_WS"/>
         <delete dir="${build.generated.dir}/jax-wsCache/ServiceRegistroAutenticacion"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion"/>
+    <target name="wsimport-client-AsignarRecursosInicio" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" destdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AsignarRecursosInicio" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservices"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio"/>
 </project>
