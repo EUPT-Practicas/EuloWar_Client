@@ -5,6 +5,7 @@
  */
 package Usuario;
 
+import Utilidades.EncriptaMD5;
 import clients.ServiceRegistroAutenticacion_Service;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -77,16 +78,37 @@ public class Alta extends HttpServlet {
         processRequest(request, response);
         request.setCharacterEncoding("UTF-8");
         
+        boolean exitoRegistro = false;
+        
         //Recoger los datos del formulario.
         String email = request.getParameter("email");
-        String nombre = request.getParameter("nombreUsuario");
+        String nombreUsuario = request.getParameter("nombreUsuario");
         String password = request.getParameter("password");
         String passwordRepit = request.getParameter("passwordRepit");
         
-        if(password.equals(passwordRepit)){
-            //System.out.println( email + " "+ nombre + " "+ password + " "+ passwordRepit);
-            System.out.println("\t\t - El resultado es: " + crearUsuario(email, nombre, password));
-        } 
+//        if(password.equals(passwordRepit)){
+//            //System.out.println( email + " "+ nombre + " "+ password + " "+ passwordRepit);
+//            System.out.println("\t\t - El resultado es: " + crearUsuario(email, nombre, password));
+//        } 
+        //Si los datos NO son vacios
+        if(!email.isEmpty() && email != null 
+                && !nombreUsuario.isEmpty() && nombreUsuario != null
+                && !password.isEmpty() && password != null
+                && !passwordRepit.isEmpty() && passwordRepit != null){
+            
+            //Comprobamos las password
+            if(password.equals(passwordRepit)){
+                //Llamada al WS
+                exitoRegistro = crearUsuario(email, nombreUsuario, EncriptaMD5.encriptarClave(password, nombreUsuario));
+            }
+        }
+        
+        if(exitoRegistro){
+            System.err.println("USUARIO REGISTRADO CORRECTAMENTE");
+        }else{
+            System.out.println("ERROR EN EL REGISTRO (Datos vacios... usuario ya existe...)");
+        }
+        
     }
 
     /**

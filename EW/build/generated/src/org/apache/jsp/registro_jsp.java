@@ -66,7 +66,7 @@ public final class registro_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"row\">\r\n");
       out.write("            <div class=\"panel panel-default col-md-3 col-md-offset-2\">\r\n");
       out.write("                <h4 class=\"text-center\">Nuevo usuario</h4>\r\n");
-      out.write("                <form role=\"form_alta\" action=\"Alta\" method=\"POST\">\r\n");
+      out.write("                <form action=\"Alta\" method=\"POST\">\r\n");
       out.write("                    <div class=\"form-group\">\r\n");
       out.write("                        <label for=\"ejemplo_email_1\">Email</label>\r\n");
       out.write("                        <input type=\"email\" class=\"form-control\" name=\"email\" id=\"ejemplo_email_1\"\r\n");
@@ -94,7 +94,7 @@ public final class registro_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\r\n");
       out.write("            <div class=\"panel panel-default col-md-3 col-md-offset-2\">\r\n");
       out.write("                <h4 class=\"text-center\">Usuario registrado</h4>\r\n");
-      out.write("                <form role=\"form_registro\"  action=\"Login\" method=\"POST\">\r\n");
+      out.write("                <form action=\"Login\" method=\"POST\">\r\n");
       out.write("                    <div class=\"form-group\">\r\n");
       out.write("                        <label for=\"ejemplo_password_1\">Usuario</label>\r\n");
       out.write("                        <input type=\"text\" class=\"form-control\" name=\"nombre\" placeholder=\"Nombre de usuario\">\r\n");

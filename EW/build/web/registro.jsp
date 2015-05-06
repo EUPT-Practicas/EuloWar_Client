@@ -23,7 +23,7 @@
         <div class="row">
             <div class="panel panel-default col-md-3 col-md-offset-2">
                 <h4 class="text-center">Nuevo usuario</h4>
-                <form role="form_alta" action="Alta" method="POST">
+                <form action="Alta" method="POST">
                     <div class="form-group">
                         <label for="ejemplo_email_1">Email</label>
                         <input type="email" class="form-control" name="email" id="ejemplo_email_1"
@@ -51,7 +51,7 @@
             </div>
             <div class="panel panel-default col-md-3 col-md-offset-2">
                 <h4 class="text-center">Usuario registrado</h4>
-                <form role="form_registro"  action="Login" method="POST">
+                <form action="Login" method="POST">
                     <div class="form-group">
                         <label for="ejemplo_password_1">Usuario</label>
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre de usuario">

@@ -5,6 +5,7 @@
  */
 package Usuario;
 
+import Utilidades.EncriptaMD5;
 import clients.ServiceRegistroAutenticacion_Service;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,7 +61,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
     }
 
     /**
@@ -77,13 +78,30 @@ public class Login extends HttpServlet {
         processRequest(request, response);
         request.setCharacterEncoding("UTF-8");
         
+        boolean exitoLogin = false;
+        
         //Recoger los datos del formulario.
-        String nombre = request.getParameter("nombre");
+        String nombreUsuario = request.getParameter("nombre");
         String password = request.getParameter("password");
         
-        System.out.println("el nombre es " + nombre + " con passs " + password);
+        System.out.println("nom: " + nombreUsuario);
+        System.out.println("pass: " + password);
+//        System.out.println("el nombre es " + nombre + " con passs " + password);
+//        
+//        System.out.println("¿El usuario entra?: " + comprobarLogin(nombre, password) );
         
-        System.out.println("¿El usuario entra?: " + comprobarLogin(nombre, password) );
+        if(!nombreUsuario.isEmpty() && nombreUsuario != null
+                && !password.isEmpty() && password != null){
+            String encriptada = EncriptaMD5.encriptarClave(password, nombreUsuario);
+            System.out.println("encriptada: " + encriptada);
+            exitoLogin = comprobarLogin(nombreUsuario, encriptada);
+            }
+        
+        if(exitoLogin){
+            System.err.println("EL USUARIO EXISTE");
+        }else{
+            System.err.println("EL USUARIO NO EXISTE, o datos vacios");
+        }
     }
 
     /**
