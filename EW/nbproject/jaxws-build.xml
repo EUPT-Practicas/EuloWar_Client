@@ -44,7 +44,7 @@
     </target>
     <target name="wsimport-client-AsignarRecursosInicio" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" destdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" destdir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" xnocompile="true" xendorsed="true" package="cliente_AsignarRecursos_WS">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
         </wsimport>
@@ -55,7 +55,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-AsignarRecursosInicio" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/webservices"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/cliente_AsignarRecursos_WS"/>
         <delete dir="${build.generated.dir}/jax-wsCache/AsignarRecursosInicio"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-ServiceRegistroAutenticacion, wsimport-client-AsignarRecursosInicio"/>

@@ -78,6 +78,8 @@ public class Alta extends HttpServlet {
         ClienteRegistroAuth cra = new ClienteRegistroAuth();
 
         boolean exitoRegistro = false;
+        boolean exitoRecursos = false;
+        boolean exitoMina = false;
 
         //Recoger los datos del formulario.
         String email = request.getParameter("email");
@@ -95,15 +97,17 @@ public class Alta extends HttpServlet {
             //Llamada al WS
             String passEncript = EncriptaMD5.encriptarClave(password, nombreUsuario);
             exitoRegistro = cra.crearUsuario(email, nombreUsuario, passEncript);
+            if (exitoRegistro) {
+                exitoRecursos = cra.asignarRecursos(email);
+                exitoMina = cra.asignarMina(email);
+                if (exitoRecursos && exitoMina){
+                    System.out.println("asignados mina y recursos");
+                } else {
+                    System.out.println("no asignados ");
+                }
+                System.err.println("USUARIO REGISTRADO CORRECTAMENTE");
+            }
         }
-
-        if (exitoRegistro) {
-            System.err.println("USUARIO REGISTRADO CORRECTAMENTE");
-
-        } else {
-            System.out.println("ERROR EN EL REGISTRO (Datos vacios... usuario ya existe...)");
-        }
-
     }
 
     /**

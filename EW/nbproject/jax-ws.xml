@@ -41,7 +41,7 @@
     <client name="AsignarRecursosInicio">
       <wsdl-url>http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl</local-wsdl-file>
-      <package-name>webservices</package-name>
+      <package-name forceReplace="true">cliente_AsignarRecursos_WS</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -67,6 +67,10 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>cliente_AsignarRecursos_WS</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

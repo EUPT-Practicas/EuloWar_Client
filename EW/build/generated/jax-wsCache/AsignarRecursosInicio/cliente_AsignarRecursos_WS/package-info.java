@@ -1,2 +1,2 @@
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://webservices/")
-package webservices;
+package cliente_AsignarRecursos_WS;

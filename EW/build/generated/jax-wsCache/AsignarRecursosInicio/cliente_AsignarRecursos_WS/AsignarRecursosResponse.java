@@ -1,5 +1,5 @@
 
-package webservices;
+package cliente_AsignarRecursos_WS;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para asignarMinaResponse complex type.
+ * <p>Clase Java para asignarRecursosResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="asignarMinaResponse">
+ * &lt;complexType name="asignarRecursosResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "asignarMinaResponse", propOrder = {
+@XmlType(name = "asignarRecursosResponse", propOrder = {
     "_return"
 })
-public class AsignarMinaResponse {
+public class AsignarRecursosResponse {
 
     @XmlElement(name = "return")
     protected boolean _return;

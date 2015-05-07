@@ -1,5 +1,5 @@
 
-package webservices;
+package cliente_AsignarRecursos_WS;
 
 import java.net.MalformedURLException;
 import java.net.URL;

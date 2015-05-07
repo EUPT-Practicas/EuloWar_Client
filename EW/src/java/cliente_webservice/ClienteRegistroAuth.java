@@ -17,18 +17,6 @@ public class ClienteRegistroAuth {
         
     }
 
-    public boolean asignarMina(java.lang.String emailUsuario) {
-        webservices.AsignarRecursosInicio_Service service = new webservices.AsignarRecursosInicio_Service();
-        webservices.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
-        return port.asignarMina(emailUsuario);
-    }
-
-    public boolean asignarRecursos(java.lang.String email) {
-        webservices.AsignarRecursosInicio_Service service = new webservices.AsignarRecursosInicio_Service();
-        webservices.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
-        return port.asignarRecursos(email);
-    }
-
     public boolean comprobarLogin(java.lang.String nombreUsuario, java.lang.String password) {
         clientes_WS.ServiceRegistroAutenticacion_Service service = new clientes_WS.ServiceRegistroAutenticacion_Service();
         clientes_WS.ServiceRegistroAutenticacion port = service.getServiceRegistroAutenticacionPort();
@@ -46,7 +34,19 @@ public class ClienteRegistroAuth {
         clientes_WS.ServiceRegistroAutenticacion port = service.getServiceRegistroAutenticacionPort();
         return port.findUser(nomUsuario);
     }
-    
-    
+
+    public boolean asignarMina(java.lang.String emailUsuario) {
+        cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service service = new cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service();
+        cliente_AsignarRecursos_WS.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
+        return port.asignarMina(emailUsuario);
+    }
+
+    public boolean asignarRecursos(java.lang.String email) {
+        cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service service = new cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service();
+        cliente_AsignarRecursos_WS.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
+        return port.asignarRecursos(email);
+    }
+
+  
     
 }
