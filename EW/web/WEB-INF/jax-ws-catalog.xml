@@ -6,4 +6,6 @@
     <system systemId="http://localhost:8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion?xsd=1" uri="wsdl/localhost_8080/ServiceRegistroAutenticacion/ServiceRegistroAutenticacion.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" uri="wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?xsd=1" uri="wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?WSDL" uri="wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.wsdl"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?xsd=1" uri="wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.xsd_1.xsd"/>
 </catalog>

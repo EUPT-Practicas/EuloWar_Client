@@ -6,6 +6,7 @@
 package conexiones;
 
 import Utilidades.EncriptaMD5;
+import asignarRecursos_WS.Mina;
 import cliente_webservice.ClienteRegistroAuth;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import threadsTiempo.GestorThreads;
 
 /**
  *
@@ -79,7 +81,6 @@ public class Alta extends HttpServlet {
 
         boolean exitoRegistro = false;
         boolean exitoRecursos = false;
-        boolean exitoMina = false;
 
         //Recoger los datos del formulario.
         String email = request.getParameter("email");
@@ -99,9 +100,11 @@ public class Alta extends HttpServlet {
             exitoRegistro = cra.crearUsuario(email, nombreUsuario, passEncript);
             if (exitoRegistro) {
                 exitoRecursos = cra.asignarRecursos(email);
-                exitoMina = cra.asignarMina(email);
-                if (exitoRecursos && exitoMina){
+                Mina m = cra.asignarMina(email);
+                if (exitoRecursos){
                     System.out.println("asignados mina y recursos");
+                    GestorThreads g = GestorThreads.getInstance();
+                    g.crearThread(m);
                 } else {
                     System.out.println("no asignados ");
                 }

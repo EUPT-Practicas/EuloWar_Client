@@ -38,10 +38,46 @@
         </wsimport-option>
       </wsimport-options>
     </client>
+    <client name="ProducirRecursosMina">
+      <wsdl-url>http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/ProducirRecursosMina/ProducirRecursosMina.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">threads_recursosMina</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>threads_recursosMina</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
     <client name="AsignarRecursosInicio">
       <wsdl-url>http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">cliente_AsignarRecursos_WS</package-name>
+      <package-name forceReplace="true">asignarRecursos_WS</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -70,7 +106,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>cliente_AsignarRecursos_WS</wsimport-option-value>
+          <wsimport-option-value>asignarRecursos_WS</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

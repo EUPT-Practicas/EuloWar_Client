@@ -5,6 +5,7 @@
  */
 package cliente_webservice;
 
+import asignarRecursos_WS.Mina;
 import clientes_WS.Usuario;
 
 /**
@@ -29,24 +30,18 @@ public class ClienteRegistroAuth {
         return port.crearUsuario(email, nombreUsuario, password);
     }
 
-    public Usuario findUser(java.lang.String nomUsuario) {
-        clientes_WS.ServiceRegistroAutenticacion_Service service = new clientes_WS.ServiceRegistroAutenticacion_Service();
-        clientes_WS.ServiceRegistroAutenticacion port = service.getServiceRegistroAutenticacionPort();
-        return port.findUser(nomUsuario);
-    }
-
-    public boolean asignarMina(java.lang.String emailUsuario) {
-        cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service service = new cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service();
-        cliente_AsignarRecursos_WS.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
+    public Mina asignarMina(java.lang.String emailUsuario) {
+        asignarRecursos_WS.AsignarRecursosInicio_Service service = new asignarRecursos_WS.AsignarRecursosInicio_Service();
+        asignarRecursos_WS.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
         return port.asignarMina(emailUsuario);
     }
 
     public boolean asignarRecursos(java.lang.String email) {
-        cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service service = new cliente_AsignarRecursos_WS.AsignarRecursosInicio_Service();
-        cliente_AsignarRecursos_WS.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
+        asignarRecursos_WS.AsignarRecursosInicio_Service service = new asignarRecursos_WS.AsignarRecursosInicio_Service();
+        asignarRecursos_WS.AsignarRecursosInicio port = service.getAsignarRecursosInicioPort();
         return port.asignarRecursos(email);
     }
 
-  
     
+  
 }
