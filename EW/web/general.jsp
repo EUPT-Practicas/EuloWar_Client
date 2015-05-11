@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Plantilla básica de Bootstrap</title>
+        <title>EuloWar</title>
 
         <!-- CSS de Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -17,61 +17,64 @@
         <![endif]-->
     </head>
     <body>
-        <div class="row">
-            <h1 class="col-md-2 col-md-offset-1">EuloWar</h1>
-            <div class="col-md-2 col-md-offset-7">
-                </br>
-                <h5 class="text-primary"><strong>Hierro: 5.000</strong></h5>
-                <h5 class="text-primary"><strong>Tropas:170/200</strong></h5>
-            </div>
-        </div> 
-        <div class="row">
-            <nav class="navbar navbar-inverse panel-default col-md-10 col-md-offset-1">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!--<a class="navbar-brand" href="#">Project name</a>-->
-                    </div>
-                    <div id="navbar" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <!--<li class="active"><a href="general.jsp">Vision general</a></li>-->
-                            <li><a href="minas.jsp">Vision general</a></li>
-                            <li><a href="minas.jsp">Minas</a></li>
-                            <li><a href="defensa.jsp">Defensa</a></li>
-                            <li><a href="#about">Ataque</a></li>
-                            <li><a href="#contact">Campamento</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
+        <header>    
+            <%@ include file='header.jsp' %>
+        </header>
+        <nav>
+            <%@ include file='nav.jsp' %>
+        </nav>
+
+        <div class="row col-md-10 col-md-offset-1">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">Bienvendio: Eulogio</div>
+                <div class="panel-body">
+                    <p class="text-center">10/05/2015</p>
+                    <p class="text-center">Ninguna actividad recientemente</p>
                 </div>
-            </nav>
-        </div>
-        
-        <div class="row">
-            <div class="panel panel-default col-md-10 col-md-offset-1">
-                <h4 class="text-center bg-primary">Bienvenido: MR.X</h4>
-                </br>  
-                </br>  
             </div>
-            <div class="panel panel-default col-md-10 col-md-offset-1">
-                <h4 class="text-center bg-primary">Registro de actividad</h4>
-               </br>
-               <div class="row">
-                    <img src="img/mano.png" class="img-responsive img-thumbnail col-md-2 col-md-offset-1" alt="Responsive image">
-                    <img src="img/mano.png" class="img-responsive img-thumbnail col-md-2 col-md-offset-1" alt="Responsive image">
-                    <img src="img/mano.png" class="img-responsive img-thumbnail col-md-2 col-md-offset-1" alt="Responsive image">
-                    <img src="img/mano.png" class="img-responsive img-thumbnail col-md-2 col-md-offset-1" alt="Responsive image">
-               </br>
-               </div>     
+
+            <!--<div class="panel panel-default">-->
+            <div class="panel panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Registro de actividad</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#">Defensa</a></li>
+                        <li><a href="#">Ataque</a></li>
+                    </ul>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td>
+                                <h5>
+                                Pepe travel </br>
+                                Tropas perdidas: 157. </br>
+                                Hierro robado: 5.000 </br>
+                                </h5>
+                            </td>
+                            <td class="text-right"><h3 >Enhorabuena. Jefe hemos vencido.</h3></td>
+                        </tr>
+                        <tr class="info">
+                            <td>
+                                <h5>
+                                Pepe travel </br>
+                                Tropas perdidas: 157. </br>
+                                Hierro robado: 0 </br>
+                                </h5>
+                            </td>
+                            <td class="text-right"><h3>oh No. Hemos sido vencidos.</h3></td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
-                
         </div>
 
 
+
+        <footer class="container">
+            <%@ include file='footer.jsp' %>
+        </footer>
         <!-- Librería jQuery requerida por los plugins de JavaScript -->
         <script src="http://code.jquery.com/jquery.js"></script>
 
@@ -81,3 +84,4 @@
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
+<!--<h4 class="text-center bg-primary">Bienvenido: MR.X</h4>-->

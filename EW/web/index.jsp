@@ -11,10 +11,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Plantilla básica de Bootstrap</title>
-
+        <title>EuloWar</title>
+        <link href="css/newcss.css" rel="stylesheet" media="screen">
         <!-- CSS de Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
 
         <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
         <!--[if lt IE 9]>
@@ -22,71 +23,62 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="label label-success">
-        <div class="container label label-warning">
-            <header>
-                <h1>Mi sitio web</h1>
-                <p>Mi sitio web creado en html5</p>
-            </header>
-            <section>
-            <article>
-                 <h2>Titilo de contenido<h2>
-                <p> Contenido (ademas de imagenes, citas, videos etc.) </p>
-            </article>
+    <body class="bodyimg">
+        
+        <div class="container">
+
+            <section class="row">
+                <div row="row">
+                    <!--<img src="img/war1.png" class="img-responsive img-thumbnail col-md-4 col-md-offset-4" alt="Responsive image">--></br>
+                    <div>
+                    <div class="panel panel-default col-md-4 col-md-offset-4">
+                        <!--<h4 class="text-center">Registrado</h4>-->
+                        <img src="./img/logotipo.png" class="img-responsive " alt="Logo EuloWar">
+
+                        <form role="form_registro"  action="Login" name="nombre" method="POST">
+                            <div class="form-group">
+                                <label for="ejemplo_password_1">Usuario</label>
+                                <input type="text" class="form-control" placeholder="Nombre de usuario">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ejemplo_password_1">Contraseña</label>
+                                <input type="password" class="form-control" name="password" id="ejemplo_password_1" 
+                                       placeholder="Contraseña">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary col-md-8 col-md-offset-2">Enviar</button>
+                            </br>
+                                                        </br>
+
+                            <a href="./registro.jsp">
+                                <p class="text-center">Registrate</p>
+                            </a>
+                            </br>
+                        </form>
+                    </div>
+                    </div>     
+                </div>
             </section>
-                <aside>
-                <h3>Titulo de contenido</h3>
-                <p>contenido</p>
-                </aside>
-            <footer>
-                Creado por mi el 2011
-            </footer>
+            <div class="row col-md-4 col-md-offset-4">
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Usuario ó contraseña incorectos
+                </div>        
+            </div>
+            
+
         </div>
-                        <!--        <div class="container ">
-                                <div class="container label label-danger">
-                                    <h1>EuloWar</h1>
-                                </div>
-                                
-                                <div class="row">
-                                    <a href="registro.jsp">
-                                        <button type="button" class="btn btn-primary col-md-2 col-md-offset-8">Identificate</button>
-                                    </a>
-                                </div>
-                                    <div></div>
-                                
-                                </br>
-                                <div class="panel panel-default">
-                                <div class="row ">
-                                    <img src="img/war.png" class="img-responsive  col-md-4 col-md-offset-4" alt="Responsive image">
-                                </div>
-                                <br>
-                                <p class="col-md-6 col-md-offset-3 panel panel-default">
-                                    Defien y ataca para ser el Nº1 </br>
-                                    Administra turs recursos ó . </br>
-                                    Construlle defensas para evadir ataques enemigos ó  ataca para robar recursos y hacerte mas fuerte.
-                                   
-                                </p>
-                                </div>-->
-                        <!--        <div class="row">
-                                    <div class="col-md-4">.col-md-4</div>
-                                    <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-                                </div>
-                        
-                                <div class="row">
-                                    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-                                    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-                                </div>
-                        
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-                                </div>-->
+             <footer class="container">
+                <%@ include file='footer.jsp' %>
+            </footer>
+        <!-- Librería jQuery requerida por los plugins de JavaScript -->
+        <script src="http://code.jquery.com/jquery.js"></script>
 
-                        <!-- Librería jQuery requerida por los plugins de JavaScript -->
-                        <script src="http://code.jquery.com/jquery.js"></script>
-
-                        <!-- Todos los plugins JavaScript de Bootstrap (también puedes
-                             incluir archivos JavaScript individuales de los únicos
-                             plugins que utilices) -->
-                        <script src="js/bootstrap.min.js"></script>
-                        </body>
-                        </html>
+        <!-- Todos los plugins JavaScript de Bootstrap (también puedes
+             incluir archivos JavaScript individuales de los únicos
+             plugins que utilices) -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,17 +1,17 @@
 <%-- 
-    Document   : defensa
-    Created on : 28-abr-2015, 20:49:51
+    Document   : ataque
+    Created on : 09-may-2015, 21:04:19
     Author     : Ricardo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>EuloWar</title>
+        <title>Plantilla básica de Bootstrap</title>
 
         <!-- CSS de Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -30,20 +30,19 @@
             <%@ include file='nav.jsp' %>
         </nav>
         
-
         <div class="row">
             <div class="panel panel-default col-md-10 col-md-offset-1">
                  <div class="col-md-1 col-md-offset-11 text-right">
                         <h5><strong>Nivel: 5</strong></h5>
                 </div> 
                 <div class="col-md-5 col-md-offset-0">
-                     <img src="img/defensa/rambo.png" class="img-responsive " alt="Responsive image">
+                     <img src="img/ataque/chuck2.png" class="img-responsive " alt="Responsive image">
                 </div>
                 <div class="row">
              
                     <div class="col-md-5 col-md-offset-0">
                         <div clas="row">
-                            <h1 class="">Rambo total</h1>
+                            <h1 class="">Cuidadito con migo</h1>
                         </div>
                         <div clas="row">
                             <h5 class="">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
@@ -82,24 +81,24 @@
                 <div class="col-md-1 col-md-offset-0"></div>
                 
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/tedax.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/peloton.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>
                 
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/antiaerea.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/vehiculoblindado.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/bunker.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/apache.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/misilesantiaereos.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/caza.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/rambo.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/ataque/chuck2.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>
             </div>

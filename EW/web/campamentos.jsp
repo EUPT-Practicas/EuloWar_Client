@@ -1,12 +1,12 @@
 <%-- 
-    Document   : defensa
-    Created on : 28-abr-2015, 20:49:51
+    Document   : campamentos
+    Created on : 09-may-2015, 21:04:41
     Author     : Ricardo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,13 +37,13 @@
                         <h5><strong>Nivel: 5</strong></h5>
                 </div> 
                 <div class="col-md-5 col-md-offset-0">
-                     <img src="img/defensa/rambo.png" class="img-responsive " alt="Responsive image">
+                     <img src="img/campamento/ArmyCamp.png" class="img-responsive " alt="Responsive image">
                 </div>
                 <div class="row">
              
                     <div class="col-md-5 col-md-offset-0">
                         <div clas="row">
-                            <h1 class="">Rambo total</h1>
+                            <h1 class="">Campamento</h1>
                         </div>
                         <div clas="row">
                             <h5 class="">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
@@ -79,28 +79,13 @@
             </div>
             <div class="panel panel-default col-md-10 col-md-offset-1">
                 </br></br>
-                <div class="col-md-1 col-md-offset-0"></div>
                 
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/tedax.png" class="img-responsive" alt="Responsive image">
+                    <img src="img/campamento/ArmyCamp.png" class="img-responsive" alt="Responsive image">
                     <h5 class="text-center">Nivel:5 </h5>
                 </div>
                 
-                <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/antiaerea.png" class="img-responsive" alt="Responsive image">
-                    <h5 class="text-center">Nivel:5 </h5>
-                </div>
-                <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/bunker.png" class="img-responsive" alt="Responsive image">
-                    <h5 class="text-center">Nivel:5 </h5>
-                </div>
-                <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/misilesantiaereos.png" class="img-responsive" alt="Responsive image">
-                    <h5 class="text-center">Nivel:5 </h5>
-                </div>
-                <div class="col-md-2 col-md-offset-0">
-                    <img src="img/defensa/rambo.png" class="img-responsive" alt="Responsive image">
-                    <h5 class="text-center">Nivel:5 </h5>
+   
                 </div>
             </div>
         </div>
