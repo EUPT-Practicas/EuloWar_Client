@@ -58,22 +58,12 @@ public class Login extends HttpServlet {
             String resultado;
             if (exitoLogin) {
                 System.err.println("EL USUARIO EXISTE");
-                resultado = "EXISTE";
+                resultado = "EXISTE red";
+                response.sendRedirect("./general.jsp");
             } else {
                 System.err.println("EL USUARIO NO EXISTE, o datos vacios, contraseña ");
                 resultado = "NO EXISTE";
             }
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Login</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
-            out.println("</br>RESULTADO LOGIN: " + resultado);
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

@@ -87,6 +87,7 @@ public class Alta extends HttpServlet {
         String nombreUsuario = request.getParameter("nombreUsuario");
         String password = request.getParameter("password");
         String passwordRepit = request.getParameter("passwordRepit");
+        System.out.println(email+nombreUsuario+password);
 
 //        if(password.equals(passwordRepit)){
 //            //System.out.println( email + " "+ nombre + " "+ password + " "+ passwordRepit);

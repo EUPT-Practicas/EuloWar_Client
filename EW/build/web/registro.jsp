@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Plantilla básica de Bootstrap</title>
+        <title>EuloWar</title>
 
         <!-- CSS de Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -18,12 +18,15 @@
     </head>
     <body>
         <div class="container">
-            <h1>EuloWar</h1>
-        </div>    
+            <header class="row">
+                <img src="./img/logotipo.png" class="img-responsive  col-md-3 col-md-offset-0" alt="Logo EuloWar">
+                
+            </header>
+           
         <div class="row">
             <div class="panel panel-default col-md-3 col-md-offset-2">
                 <h4 class="text-center">Nuevo usuario</h4>
-                <form action="Alta" method="POST">
+                <form role="form_alta" action="Alta" method="POST">
                     <div class="form-group">
                         <label for="ejemplo_email_1">Email</label>
                         <input type="email" class="form-control" name="email" id="ejemplo_email_1"
@@ -45,16 +48,17 @@
                                placeholder="Contraseña">
                     </div>
                     
-                    <button type="submit" class="btn btn-default">Enviar</button>
+                    <button type="submit" class="btn btn-primary col-md-8 col-md-offset-2">Enviar</button>
                     </br></br>
                 </form>
             </div>
+            
             <div class="panel panel-default col-md-3 col-md-offset-2">
                 <h4 class="text-center">Usuario registrado</h4>
-                <form action="Login" method="POST">
+                <form role="form_registro"  action="Login" name="nombre" method="POST">
                     <div class="form-group">
                         <label for="ejemplo_password_1">Usuario</label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre de usuario">
+                        <input type="text" class="form-control" placeholder="Nombre de usuario">
                     </div>
                     
                     <div class="form-group">
@@ -63,11 +67,12 @@
                                placeholder="Contraseña">
                     </div>
                                         
-                    <button type="submit" class="btn btn-default">Enviar</button>
+                    <button type="submit" class="btn btn-primary col-md-8 col-md-offset-2">Enviar</button>
                     </br></br>
                 </form>
             </div>
 
+        </div>
         </div>
 
 

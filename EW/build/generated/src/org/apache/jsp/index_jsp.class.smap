@@ -5,6 +5,10 @@ JSP
 *F
 + 0 index.jsp
 index.jsp
++ 1 footer.jsp
+footer.jsp
 *L
-5,89:44
+5,80:49
+5#1,11:129
+84#0,12:139
 *E

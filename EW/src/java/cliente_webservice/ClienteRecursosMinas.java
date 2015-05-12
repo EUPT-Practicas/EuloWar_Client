@@ -5,6 +5,8 @@
  */
 package cliente_webservice;
 
+import operacionesminas_client.Mina;
+
 /**
  *
  * @author FranciscoJavier
@@ -12,9 +14,21 @@ package cliente_webservice;
 public class ClienteRecursosMinas {
 
     public boolean producirRecursos(int idMina) {
-        threads_recursosMina.ProducirRecursosMina_Service service = new threads_recursosMina.ProducirRecursosMina_Service();
-        threads_recursosMina.ProducirRecursosMina port = service.getProducirRecursosMinaPort();
+        operacionesminas_client.ProducirRecursosMina service = new operacionesminas_client.ProducirRecursosMina();
+        operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
         return port.producirRecursos(idMina);
     }
-    
+
+    public boolean mejorarMina(int idMina) {
+        operacionesminas_client.ProducirRecursosMina service = new operacionesminas_client.ProducirRecursosMina();
+        operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
+        return port.mejorarMina(idMina);
+    }
+
+    public Mina asignarMina(java.lang.String emailUsuario) {
+        operacionesminas_client.ProducirRecursosMina service = new operacionesminas_client.ProducirRecursosMina();
+        operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
+        return port.asignarMina(emailUsuario);
+    }
+  
 }

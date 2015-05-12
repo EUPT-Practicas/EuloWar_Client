@@ -8,4 +8,6 @@
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?xsd=1" uri="wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?WSDL" uri="wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.wsdl"/>
     <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?xsd=1" uri="wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL" uri="wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?xsd=1" uri="wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.xsd_1.xsd"/>
 </catalog>

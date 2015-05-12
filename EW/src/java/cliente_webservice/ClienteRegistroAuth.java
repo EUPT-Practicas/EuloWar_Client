@@ -42,6 +42,12 @@ public class ClienteRegistroAuth {
         return port.asignarRecursos(email);
     }
 
+    public Usuario findUser(java.lang.String nomUsuario) {
+        clientes_WS.ServiceRegistroAutenticacion_Service service = new clientes_WS.ServiceRegistroAutenticacion_Service();
+        clientes_WS.ServiceRegistroAutenticacion port = service.getServiceRegistroAutenticacionPort();
+        return port.findUser(nomUsuario);
+    }
+
     
   
 }
