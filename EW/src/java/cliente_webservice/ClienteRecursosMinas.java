@@ -48,6 +48,12 @@ public class ClienteRecursosMinas {
         operacionesRecursos_WS.OperacionesRecursos port = service.getOperacionesRecursosPort();
         return port.sumarRecursos(unidades, email);
     }
+
+    public java.util.List<java.lang.Object> obtenerMinas(java.lang.String email) {
+        operacionesminas_client.ProducirRecursosMina service = new operacionesminas_client.ProducirRecursosMina();
+        operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
+        return port.obtenerMinas(email);
+    }
     
     
   

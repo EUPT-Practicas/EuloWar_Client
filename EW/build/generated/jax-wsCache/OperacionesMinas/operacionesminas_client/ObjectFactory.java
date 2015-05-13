@@ -28,6 +28,8 @@ public class ObjectFactory {
     private final static QName _ProducirRecursos_QNAME = new QName("http://webservices/", "producirRecursos");
     private final static QName _MejorarMina_QNAME = new QName("http://webservices/", "mejorarMina");
     private final static QName _Mina_QNAME = new QName("http://webservices/", "mina");
+    private final static QName _ObtenerMinas_QNAME = new QName("http://webservices/", "obtenerMinas");
+    private final static QName _ObtenerMinasResponse_QNAME = new QName("http://webservices/", "obtenerMinasResponse");
     private final static QName _Usuario_QNAME = new QName("http://webservices/", "usuario");
     private final static QName _AsignarMinaResponse_QNAME = new QName("http://webservices/", "asignarMinaResponse");
     private final static QName _MejorarMinaResponse_QNAME = new QName("http://webservices/", "mejorarMinaResponse");
@@ -71,6 +73,22 @@ public class ObjectFactory {
      */
     public AsignarMinaResponse createAsignarMinaResponse() {
         return new AsignarMinaResponse();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerMinas }
+     * 
+     */
+    public ObtenerMinas createObtenerMinas() {
+        return new ObtenerMinas();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerMinasResponse }
+     * 
+     */
+    public ObtenerMinasResponse createObtenerMinasResponse() {
+        return new ObtenerMinasResponse();
     }
 
     /**
@@ -147,6 +165,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices/", name = "mina")
     public JAXBElement<Mina> createMina(Mina value) {
         return new JAXBElement<Mina>(_Mina_QNAME, Mina.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerMinas }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "obtenerMinas")
+    public JAXBElement<ObtenerMinas> createObtenerMinas(ObtenerMinas value) {
+        return new JAXBElement<ObtenerMinas>(_ObtenerMinas_QNAME, ObtenerMinas.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerMinasResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "obtenerMinasResponse")
+    public JAXBElement<ObtenerMinasResponse> createObtenerMinasResponse(ObtenerMinasResponse value) {
+        return new JAXBElement<ObtenerMinasResponse>(_ObtenerMinasResponse_QNAME, ObtenerMinasResponse.class, null, value);
     }
 
     /**

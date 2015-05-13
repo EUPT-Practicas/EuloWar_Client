@@ -8,8 +8,8 @@
     <system systemId="http://localhost:8080/ProducirRecursosMina/ProducirRecursosMina?xsd=1" uri="src/conf/xml-resources/web-service-references/ProducirRecursosMina/wsdl/localhost_8080/ProducirRecursosMina/ProducirRecursosMina.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?WSDL" uri="src/conf/xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.wsdl"/>
     <system systemId="http://localhost:8080/AsignarRecursosInicio/AsignarRecursosInicio?xsd=1" uri="src/conf/xml-resources/web-service-references/AsignarRecursosInicio/wsdl/localhost_8080/AsignarRecursosInicio/AsignarRecursosInicio.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL" uri="src/conf/xml-resources/web-service-references/OperacionesMinas/wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl"/>
-    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?xsd=1" uri="src/conf/xml-resources/web-service-references/OperacionesMinas/wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?WSDL" uri="src/conf/xml-resources/web-service-references/OperacionesRecursos/wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.wsdl"/>
     <system systemId="http://localhost:8080/OperacionesRecursos/OperacionesRecursos?xsd=1" uri="src/conf/xml-resources/web-service-references/OperacionesRecursos/wsdl/localhost_8080/OperacionesRecursos/OperacionesRecursos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL" uri="src/conf/xml-resources/web-service-references/OperacionesMinas/wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.wsdl"/>
+    <system systemId="http://localhost:8080/ProducirRecursosMina/OperacionesMinas?xsd=1" uri="src/conf/xml-resources/web-service-references/OperacionesMinas/wsdl/localhost_8080/ProducirRecursosMina/OperacionesMinas.xsd_1.xsd"/>
 </catalog>

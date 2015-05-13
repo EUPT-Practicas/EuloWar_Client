@@ -22,6 +22,12 @@
 <message name="producirRecursosResponse">
 <part name="parameters" element="tns:producirRecursosResponse"/>
 </message>
+<message name="obtenerMinas">
+<part name="parameters" element="tns:obtenerMinas"/>
+</message>
+<message name="obtenerMinasResponse">
+<part name="parameters" element="tns:obtenerMinasResponse"/>
+</message>
 <portType name="OperacionesMinas">
 <operation name="asignarMina">
 <input wsam:Action="http://webservices/OperacionesMinas/asignarMinaRequest" message="tns:asignarMina"/>
@@ -34,6 +40,10 @@
 <operation name="producirRecursos">
 <input wsam:Action="http://webservices/OperacionesMinas/producirRecursosRequest" message="tns:producirRecursos"/>
 <output wsam:Action="http://webservices/OperacionesMinas/producirRecursosResponse" message="tns:producirRecursosResponse"/>
+</operation>
+<operation name="obtenerMinas">
+<input wsam:Action="http://webservices/OperacionesMinas/obtenerMinasRequest" message="tns:obtenerMinas"/>
+<output wsam:Action="http://webservices/OperacionesMinas/obtenerMinasResponse" message="tns:obtenerMinasResponse"/>
 </operation>
 </portType>
 <binding name="OperacionesMinasPortBinding" type="tns:OperacionesMinas">
@@ -57,6 +67,15 @@
 </output>
 </operation>
 <operation name="producirRecursos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="obtenerMinas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

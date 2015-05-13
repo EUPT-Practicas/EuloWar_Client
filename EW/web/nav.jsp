@@ -1,10 +1,6 @@
-<%-- 
-    Document   : nav
-    Created on : 10-may-2015, 15:42:11
-    Author     : Ricardo
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <div class="row">
@@ -30,7 +26,7 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../navbar-static-top/">Ricardo</a></li>
+                        <li><a href="../navbar-static-top/"><%=nombreUsuario%></a></li>
                         <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
