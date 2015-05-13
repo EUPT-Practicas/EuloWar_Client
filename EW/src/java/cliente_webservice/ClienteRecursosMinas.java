@@ -30,5 +30,25 @@ public class ClienteRecursosMinas {
         operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
         return port.asignarMina(emailUsuario);
     }
+
+    public Integer obtenerRecursos(java.lang.String email) {
+        operacionesRecursos_WS.OperacionesRecursos_Service service = new operacionesRecursos_WS.OperacionesRecursos_Service();
+        operacionesRecursos_WS.OperacionesRecursos port = service.getOperacionesRecursosPort();
+        return port.obtenerRecursos(email);
+    }
+
+   public String restarRecursos(int unidades, java.lang.String email) {
+        operacionesRecursos_WS.OperacionesRecursos_Service service = new operacionesRecursos_WS.OperacionesRecursos_Service();
+        operacionesRecursos_WS.OperacionesRecursos port = service.getOperacionesRecursosPort();
+        return port.restarRecursos(unidades, email);
+    }
+
+    public boolean sumarRecursos(int unidades, java.lang.String email) {
+        operacionesRecursos_WS.OperacionesRecursos_Service service = new operacionesRecursos_WS.OperacionesRecursos_Service();
+        operacionesRecursos_WS.OperacionesRecursos port = service.getOperacionesRecursosPort();
+        return port.sumarRecursos(unidades, email);
+    }
+    
+    
   
 }

@@ -60,6 +60,7 @@ public class Login extends HttpServlet {
                 System.err.println("EL USUARIO EXISTE");
                 resultado = "EXISTE red";
                 response.sendRedirect("./general.jsp");
+                //CUANDO TENGA EXITO TENGO QUE PASAR EL EMAIL A WEBSOCKET.JS
             } else {
                 System.err.println("EL USUARIO NO EXISTE, o datos vacios, contraseña ");
                 resultado = "NO EXISTE";
