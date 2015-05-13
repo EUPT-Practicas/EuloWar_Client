@@ -18,7 +18,7 @@
             </br>
             <div class="row text-right">
                 <h5 class="text-primary"><img src="img/icon/iron.png" class=" " alt="Responsive image">
-                    <strong>Hierro:</strong> <strong id="cantidadRecursos">0</strong></h5><!--cambiar por el contenido dinamico!!!!!!!!!!-->
+                    <strong>Hierro: 5.000</strong></h5>
             </div>
             <div class="row text-right">
                 <h5 class="text-primary"><img src="img/icon/tropa.png" class="  " alt="Responsive image"><strong>Tropas:170/200</strong></h5>
