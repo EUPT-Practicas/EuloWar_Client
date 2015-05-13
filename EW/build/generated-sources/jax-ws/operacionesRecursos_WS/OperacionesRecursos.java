@@ -26,8 +26,8 @@ public interface OperacionesRecursos {
 
     /**
      * 
-     * @param email
      * @param unidades
+     * @param email
      * @return
      *     returns boolean
      */
@@ -44,8 +44,8 @@ public interface OperacionesRecursos {
 
     /**
      * 
-     * @param email
      * @param unidades
+     * @param email
      * @return
      *     returns java.lang.String
      */

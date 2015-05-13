@@ -24,45 +24,21 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Recurso_QNAME = new QName("http://webservices/", "recurso");
-    private final static QName _MejorarMinaResponse_QNAME = new QName("http://webservices/", "mejorarMinaResponse");
+    private final static QName _ProducirRecursosResponse_QNAME = new QName("http://webservices/", "producirRecursosResponse");
     private final static QName _ProducirRecursos_QNAME = new QName("http://webservices/", "producirRecursos");
-    private final static QName _AsignarMina_QNAME = new QName("http://webservices/", "asignarMina");
     private final static QName _MejorarMina_QNAME = new QName("http://webservices/", "mejorarMina");
     private final static QName _Mina_QNAME = new QName("http://webservices/", "mina");
-    private final static QName _ProducirRecursosResponse_QNAME = new QName("http://webservices/", "producirRecursosResponse");
     private final static QName _Usuario_QNAME = new QName("http://webservices/", "usuario");
     private final static QName _AsignarMinaResponse_QNAME = new QName("http://webservices/", "asignarMinaResponse");
+    private final static QName _MejorarMinaResponse_QNAME = new QName("http://webservices/", "mejorarMinaResponse");
+    private final static QName _AsignarMina_QNAME = new QName("http://webservices/", "asignarMina");
+    private final static QName _Recurso_QNAME = new QName("http://webservices/", "recurso");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: operacionesminas_client
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link AsignarMinaResponse }
-     * 
-     */
-    public AsignarMinaResponse createAsignarMinaResponse() {
-        return new AsignarMinaResponse();
-    }
-
-    /**
-     * Create an instance of {@link ProducirRecursosResponse }
-     * 
-     */
-    public ProducirRecursosResponse createProducirRecursosResponse() {
-        return new ProducirRecursosResponse();
-    }
-
-    /**
-     * Create an instance of {@link Usuario }
-     * 
-     */
-    public Usuario createUsuario() {
-        return new Usuario();
     }
 
     /**
@@ -74,27 +50,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Mina }
+     * Create an instance of {@link Recurso }
      * 
      */
-    public Mina createMina() {
-        return new Mina();
-    }
-
-    /**
-     * Create an instance of {@link MejorarMina }
-     * 
-     */
-    public MejorarMina createMejorarMina() {
-        return new MejorarMina();
-    }
-
-    /**
-     * Create an instance of {@link ProducirRecursos }
-     * 
-     */
-    public ProducirRecursos createProducirRecursos() {
-        return new ProducirRecursos();
+    public Recurso createRecurso() {
+        return new Recurso();
     }
 
     /**
@@ -106,29 +66,60 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Recurso }
+     * Create an instance of {@link AsignarMinaResponse }
      * 
      */
-    public Recurso createRecurso() {
-        return new Recurso();
+    public AsignarMinaResponse createAsignarMinaResponse() {
+        return new AsignarMinaResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Recurso }{@code >}}
+     * Create an instance of {@link Usuario }
      * 
      */
-    @XmlElementDecl(namespace = "http://webservices/", name = "recurso")
-    public JAXBElement<Recurso> createRecurso(Recurso value) {
-        return new JAXBElement<Recurso>(_Recurso_QNAME, Recurso.class, null, value);
+    public Usuario createUsuario() {
+        return new Usuario();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MejorarMinaResponse }{@code >}}
+     * Create an instance of {@link MejorarMina }
      * 
      */
-    @XmlElementDecl(namespace = "http://webservices/", name = "mejorarMinaResponse")
-    public JAXBElement<MejorarMinaResponse> createMejorarMinaResponse(MejorarMinaResponse value) {
-        return new JAXBElement<MejorarMinaResponse>(_MejorarMinaResponse_QNAME, MejorarMinaResponse.class, null, value);
+    public MejorarMina createMejorarMina() {
+        return new MejorarMina();
+    }
+
+    /**
+     * Create an instance of {@link Mina }
+     * 
+     */
+    public Mina createMina() {
+        return new Mina();
+    }
+
+    /**
+     * Create an instance of {@link ProducirRecursos }
+     * 
+     */
+    public ProducirRecursos createProducirRecursos() {
+        return new ProducirRecursos();
+    }
+
+    /**
+     * Create an instance of {@link ProducirRecursosResponse }
+     * 
+     */
+    public ProducirRecursosResponse createProducirRecursosResponse() {
+        return new ProducirRecursosResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProducirRecursosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "producirRecursosResponse")
+    public JAXBElement<ProducirRecursosResponse> createProducirRecursosResponse(ProducirRecursosResponse value) {
+        return new JAXBElement<ProducirRecursosResponse>(_ProducirRecursosResponse_QNAME, ProducirRecursosResponse.class, null, value);
     }
 
     /**
@@ -138,15 +129,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices/", name = "producirRecursos")
     public JAXBElement<ProducirRecursos> createProducirRecursos(ProducirRecursos value) {
         return new JAXBElement<ProducirRecursos>(_ProducirRecursos_QNAME, ProducirRecursos.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AsignarMina }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservices/", name = "asignarMina")
-    public JAXBElement<AsignarMina> createAsignarMina(AsignarMina value) {
-        return new JAXBElement<AsignarMina>(_AsignarMina_QNAME, AsignarMina.class, null, value);
     }
 
     /**
@@ -168,15 +150,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProducirRecursosResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservices/", name = "producirRecursosResponse")
-    public JAXBElement<ProducirRecursosResponse> createProducirRecursosResponse(ProducirRecursosResponse value) {
-        return new JAXBElement<ProducirRecursosResponse>(_ProducirRecursosResponse_QNAME, ProducirRecursosResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Usuario }{@code >}}
      * 
      */
@@ -192,6 +165,33 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservices/", name = "asignarMinaResponse")
     public JAXBElement<AsignarMinaResponse> createAsignarMinaResponse(AsignarMinaResponse value) {
         return new JAXBElement<AsignarMinaResponse>(_AsignarMinaResponse_QNAME, AsignarMinaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MejorarMinaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "mejorarMinaResponse")
+    public JAXBElement<MejorarMinaResponse> createMejorarMinaResponse(MejorarMinaResponse value) {
+        return new JAXBElement<MejorarMinaResponse>(_MejorarMinaResponse_QNAME, MejorarMinaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AsignarMina }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "asignarMina")
+    public JAXBElement<AsignarMina> createAsignarMina(AsignarMina value) {
+        return new JAXBElement<AsignarMina>(_AsignarMina_QNAME, AsignarMina.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Recurso }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "recurso")
+    public JAXBElement<Recurso> createRecurso(Recurso value) {
+        return new JAXBElement<Recurso>(_Recurso_QNAME, Recurso.class, null, value);
     }
 
 }
