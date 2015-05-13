@@ -3,8 +3,12 @@
     Created on : 10-may-2015, 15:43:33
     Author     : Ricardo
 --%>
-
+<%@page import="clientes_WS.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%HttpSession miSesion = request.getSession();
+  
+  Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
+  String nombreUsuario = usuario.getNombreUsuario();%>
 <!DOCTYPE html>
 <html>
     <div class="row">

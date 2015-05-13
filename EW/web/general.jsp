@@ -1,9 +1,6 @@
-<%@page import="clientes_WS.Usuario"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%HttpSession miSesion = request.getSession();
-  
-  Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
-  String nombreUsuario = usuario.getNombreUsuario();%>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
