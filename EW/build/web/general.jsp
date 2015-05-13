@@ -1,20 +1,13 @@
+<%@page import="clientes_WS.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%HttpSession miSesion = request.getSession();
+  
+  Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
+  String nombreUsuario = usuario.getNombreUsuario();%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>EuloWar</title>
-
-        <!-- CSS de Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-        <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <%@ include file='head.jsp' %>
     </head>
     <body>
         <header>    
@@ -26,7 +19,7 @@
 
         <div class="row col-md-10 col-md-offset-1">
             <div class="panel panel-primary">
-                <div class="panel-heading text-center">Bienvendio: Eulogio</div>
+                <div class="panel-heading text-center">Bienvendio: <%=nombreUsuario%></div>
                 <div class="panel-body">
                     <p class="text-center">10/05/2015</p>
                     <p class="text-center">Ninguna actividad recientemente</p>

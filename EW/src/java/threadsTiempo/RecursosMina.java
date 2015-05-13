@@ -16,7 +16,7 @@ import java.util.TimerTask;
  */
 public class RecursosMina implements Runnable {
 
-    private static int DIEZ_MINUTOS = 10 * 60 * 1000;
+    private static final int DIEZ_MINUTOS = 10 * 60 * 1000;
     private Mina mina;
     private Timer timer;
 
@@ -28,7 +28,6 @@ public class RecursosMina implements Runnable {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                System.out.println("actualizados recursos");
                 ClienteRecursosMinas crm = new ClienteRecursosMinas();
                 crm.producirRecursos(mina.getIdMina());
             }
