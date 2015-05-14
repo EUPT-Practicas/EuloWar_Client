@@ -8,7 +8,8 @@
 <%HttpSession miSesion = request.getSession();
   
   Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
-  String nombreUsuario = usuario.getNombreUsuario();%>
+  String nombreUsuario = usuario.getNombreUsuario();
+  String email = usuario.getEmail();%>
 <!DOCTYPE html>
 <html>
     <div class="row">

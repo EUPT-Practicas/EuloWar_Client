@@ -26,10 +26,13 @@ import javax.websocket.server.ServerEndpoint;
  * @author FranciscoJavier
  */
 @ServerEndpoint("/recursosendpoint")
-public class recursosEndpoint {
+public class RecursosEndpoint {
 
     private static Set<Session> peers = Collections.synchronizedSet(new HashSet<Session>());
 
+    public RecursosEndpoint() {
+    }
+    
     @OnOpen
     public void onOpen(Session peer) {
         System.out.println("open endporint" + peer);
@@ -41,27 +44,31 @@ public class recursosEndpoint {
         System.out.println("close endopint");
         peers.remove(peer);
     }
-
+    
     @OnMessage
     public void obtenerRecursos(final String email, Session session) throws IOException, EncodeException {
-        for (final Session peer : peers) {
-            if (!peer.equals(session)) {
+        System.out.println("CASI CASI ESTOY EN EL ENDPOINT KEKEKEKEKEKEKEKEKEKEEKEKEKEK");
+        for (/*final */final Session peer : peers) {
+            if (peer.equals(session)) {
                 //LLAMADA AL WEBSERVICE PARA OBTENER LOS RECURSOS
                 //peer.getBasicRemote().sendObject(figure);
+                System.out.println("ESTOY EN EL ENDPOINT KEKEKEKEKEKEKEKEKEKEEKEKEKEK");
+                peer.getBasicRemote().sendText("ENVIANDO RESPUESTA DESDE WS");
 
                 TimerTask timerTask = new TimerTask() {
                     @Override
                     public void run() {
                         ClienteRecursosMinas crm = new ClienteRecursosMinas();
-                        System.out.println("email: " + email);
-                        System.out.println("actualizados recursos");
-
+                        System.out.println("email: " + email);                     
+                        
                         int recursos = crm.obtenerRecursos(email);
                         String recursoString = Integer.toString(recursos);
                         try {
+                            System.out.println("RECURSOSOSOSOSOSOSOS: " + recursoString);
                             peer.getBasicRemote().sendText(recursoString);
+                            System.out.println("actualizados recursos");
                         } catch (IOException ex) {
-                            Logger.getLogger(recursosEndpoint.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(RecursosEndpoint.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                 };

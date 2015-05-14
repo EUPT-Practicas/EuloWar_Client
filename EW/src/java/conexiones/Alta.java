@@ -7,6 +7,7 @@ package conexiones;
 
 import Utilidades.EncriptaMD5;
 import asignarRecursos_WS.Mina;
+import cliente_webservice.ClienteRecursosMinas;
 import cliente_webservice.ClienteRegistroAuth;
 import clientes_WS.Usuario;
 import java.io.IOException;
@@ -76,6 +77,9 @@ public class Alta extends HttpServlet {
 
                         HttpSession nuevaSesion = request.getSession();
                         nuevaSesion.setAttribute("usuario", usuario);
+                        
+//                        ClienteRecursosMinas crm = new ClienteRecursosMinas();
+//                        System.out.println("RECURSOSOSOSOSOSOSOSOSOOS: " + crm.obtenerRecursos(email));
 
                         response.sendRedirect("general.jsp");
                         System.out.println("pepe");
