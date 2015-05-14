@@ -1,6 +1,7 @@
 
 package operacionesminas_client;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -68,5 +69,20 @@ public interface OperacionesMinas {
     public boolean producirRecursos(
         @WebParam(name = "idMina", targetNamespace = "")
         int idMina);
+
+    /**
+     * 
+     * @param email
+     * @return
+     *     returns java.util.List<java.lang.Object>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "obtenerMinas", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerMinas")
+    @ResponseWrapper(localName = "obtenerMinasResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ObtenerMinasResponse")
+    @Action(input = "http://webservices/OperacionesMinas/obtenerMinasRequest", output = "http://webservices/OperacionesMinas/obtenerMinasResponse")
+    public List<Object> obtenerMinas(
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
 
 }

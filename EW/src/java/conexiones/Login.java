@@ -7,12 +7,14 @@ package conexiones;
 
 import Utilidades.EncriptaMD5;
 import cliente_webservice.ClienteRegistroAuth;
+import clientes_WS.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,7 +37,7 @@ public class Login extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             request.setCharacterEncoding("UTF-8");
             ClienteRegistroAuth cra = new ClienteRegistroAuth();
-
+            Usuario usuario;
             boolean exitoLogin = false;
 
             //Recoger los datos del formulario.
@@ -59,6 +61,11 @@ public class Login extends HttpServlet {
             if (exitoLogin) {
                 System.err.println("EL USUARIO EXISTE");
                 resultado = "EXISTE red";
+                usuario = (Usuario) cra.findUser(nombreUsuario);
+                
+                HttpSession nuevaSesion = request.getSession();
+                nuevaSesion.setAttribute("usuario", usuario);
+                
                 response.sendRedirect("./general.jsp");
                 //CUANDO TENGA EXITO TENGO QUE PASAR EL EMAIL A WEBSOCKET.JS
             } else {

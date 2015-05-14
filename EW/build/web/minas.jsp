@@ -4,11 +4,30 @@
     Author     : Ricardo
 --%>
 
+<%@page import="operacionesminas_client.Mina"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Collection"%>
+<%@page import="cliente_webservice.ClienteRecursosMinas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<% %>
 <html lang="es">
     <head>
         <%@ include file='head.jsp' %>
+        <script type="text/javascript">
+            var idMina = 0;
+            function ocultar(valor, identificador) {
+                idMina = identificador;
+                document.getElementById('uno').innerHTML = "Nivel: " + valor;
+            }
+            
+            function muestraGlobal(){
+                document.getElementById('dos').innerHTML = "ID: " + idMina;
+                
+                <% System.out.println("Me pica el culo +++++++++++++++++++++++++++");%>
+            }
+        </script>
     </head>
     <body>
         <header>    
@@ -17,16 +36,19 @@
         <nav>
             <%@ include file='nav.jsp' %>
         </nav>
-                <div class="row">
+        <div class="row">
+
             <div class="panel panel-default col-md-10 col-md-offset-1">
-                 <div class="col-md-1 col-md-offset-11 text-right">
-                        <h5><strong>Nivel: 5</strong></h5>
+                <div class="col-md-1 col-md-offset-11 text-right">
+                    <h5 ><strong id="uno">Nivel:</strong></h5>
+                    <h5 ><strong id="dos">Global:</strong></h5>
+                    
                 </div> 
                 <div class="col-md-5 col-md-offset-0">
-                     <img src="img/minas/hierro1.png" class="img-responsive " alt="Responsive image">
+                    <img src="img/minas/hierro1.png" class="img-responsive " alt="Responsive image">
                 </div>
                 <div class="row">
-             
+
                     <div class="col-md-5 col-md-offset-0">
                         <div clas="row">
                             <h1 class="">Mina de hierro</h1>
@@ -51,10 +73,10 @@
                         <button type="button" class="btn btn-link">Mejorar</button>
                     </div> -->
                 </div> 
-                
+
                 <div class="row col-md-2  col-md-offset-10 ">
-                    <a href="">
-                        <button type="button" class="btn btn-primary col-md-12 ">Mejorar</button>
+                    <a onclick="muestraGlobal();">
+                        <button type="button" class="btn btn-primary col-md-12 " >Mejorar</button>
                     </a> 
                     </br>   
                     </br>   
@@ -66,12 +88,24 @@
             <div class="panel panel-default col-md-10 col-md-offset-1">
                 </br></br>
                 <!--<div class="col-md-1 col-md-offset-0"></div>-->
+                <% 
                 
+                ClienteRecursosMinas minas = new ClienteRecursosMinas();
+                List coleccionMinas = minas.obtenerMinas(usuario.getEmail());
+                Iterator<Mina> i = coleccionMinas.iterator();
+                
+                while(i.hasNext()){ 
+                    Mina mina = i.next();
+                    int nivel = mina.getNivelMina();
+                    int iden = mina.getIdMina();
+                %>
                 <div class="col-md-2 col-md-offset-0">
-                    <img src="img/minas/hierro1.png" class="img-responsive" alt="Responsive image">
-                    <h5 class="text-center">Nivel:5 </h5>
+                    <a onClick="ocultar(<%= nivel %>,<%= iden %>);">
+                        <img src="img/minas/hierro1.png" class="img-responsive" alt="Responsive image">
+                        <h5 class="text-center">Nivel:<%= nivel %> </h5>
+                    </a>
                 </div>
-     
+                <% }%>
             </div>
         </div>
         <footer class="container">

@@ -10,6 +10,10 @@
 
 <xs:element name="mina" type="tns:mina"/>
 
+<xs:element name="obtenerMinas" type="tns:obtenerMinas"/>
+
+<xs:element name="obtenerMinasResponse" type="tns:obtenerMinasResponse"/>
+
 <xs:element name="producirRecursos" type="tns:producirRecursos"/>
 
 <xs:element name="producirRecursosResponse" type="tns:producirRecursosResponse"/>
@@ -17,6 +21,42 @@
 <xs:element name="recurso" type="tns:recurso"/>
 
 <xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="producirRecursos">
+<xs:sequence>
+<xs:element name="idMina" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producirRecursosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarMina">
+<xs:sequence>
+<xs:element name="idMina" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mejorarMinaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerMinas">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerMinasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="asignarMina">
 <xs:sequence>
@@ -56,30 +96,6 @@
 <xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
 <xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
 <xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mejorarMina">
-<xs:sequence>
-<xs:element name="idMina" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mejorarMinaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="producirRecursos">
-<xs:sequence>
-<xs:element name="idMina" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="producirRecursosResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
