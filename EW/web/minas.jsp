@@ -1,7 +1,7 @@
 <%-- 
-    Document   : minas
-    Created on : 28-abr-2015, 20:13:34
-    Author     : Ricardo
+    Document   : minasb
+    Created on : 14-may-2015, 19:11:44
+    Author     : Sergio
 --%>
 
 <%@page import="operacionesminas_client.Mina"%>
@@ -15,18 +15,35 @@
 <html lang="es">
     <head>
         <%@ include file='head.jsp' %>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
         <script type="text/javascript">
-            var idMina = 0;
-            function ocultar(valor, identificador) {
-                idMina = identificador;
-                document.getElementById('uno').innerHTML = "Nivel: " + valor;
+
+            function DoAction(id, name)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "someurl.php",
+                    data: "id=" + id + "&name=" + name,
+                    success: function (msg) {
+                        alert("Data Saved: " + msg);
+                    }
+                });
             }
-            
-            function muestraGlobal(){
-                document.getElementById('dos').innerHTML = "ID: " + idMina;
+
+            function setIdMina(_idMina, _nivelM) {
                 
-                <% System.out.println("Me pica el culo +++++++++++++++++++++++++++");%>
+                $.ajax({
+                    type: "POST",
+                    url: "getInfoMina.jsp",
+                    data: "IdMina=" + _idMina + "&nivelM=" + _nivelM,
+                    success: function (msg) {
+                        $('#output').empty();
+                        $('#output').html(msg);
+                    }
+                });
             }
+
+
         </script>
     </head>
     <body>
@@ -38,71 +55,72 @@
         </nav>
         <div class="row">
 
-            <div class="panel panel-default col-md-10 col-md-offset-1">
-                <div class="col-md-1 col-md-offset-11 text-right">
-                    <h5 ><strong id="uno">Nivel:</strong></h5>
-                    <h5 ><strong id="dos">Global:</strong></h5>
-                    
-                </div> 
-                <div class="col-md-5 col-md-offset-0">
-                    <img src="img/minas/hierro1.png" class="img-responsive " alt="Responsive image">
-                </div>
-                <div class="row">
-
-                    <div class="col-md-5 col-md-offset-0">
-                        <div clas="row">
-                            <h1 class="">Mina de hierro</h1>
-                        </div>
-                        <div clas="row">
-                            <h5 class="">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
-                            </br>
-                        </div>
-                        <div clas="row">
-                            <h5 class="">Mejora de defensa: +100</h5>
-                        </div>
-                        <div clas="row">
-                            <h5 class="">Tiempo de mejora: 30 min</h5>
-                        </div>
-                        <div clas="row">
-                            <h5 class="">Coste de mejora: 5.000 Hierro</h5>
-                        </div>
-                    </div>
-                    <!--<div class="col-md-1 col-md-offset-0 text-right">
-                        <h5 class="">Nivel: 5</h5>
-
-                        <button type="button" class="btn btn-link">Mejorar</button>
-                    </div> -->
-                </div> 
-
-                <div class="row col-md-2  col-md-offset-10 ">
-                    <a onclick="muestraGlobal();">
-                        <button type="button" class="btn btn-primary col-md-12 " >Mejorar</button>
-                    </a> 
-                    </br>   
-                    </br>   
-                    </br>   
-
-                </div>
-                </br>   
+            <div class="panel panel-default col-md-10 col-md-offset-1" id="output">
+                <center><h1>No hay mina seleccionada.</h1></center>
+                <!--                <div class="col-md-1 col-md-offset-11 text-right">
+                                    <h5 ><strong id="nivelMina">Nivel:</strong></h5>
+                                                        <h5 ><strong id="dos">Global:</strong></h5>
+                
+                                </div> 
+                                <div class="col-md-5 col-md-offset-0">
+                                    <img src="img/minas/hierro1.png" class="img-responsive " alt="Responsive image">
+                                </div>
+                                <div class="row">
+                
+                                    <div class="col-md-5 col-md-offset-0">
+                                        <div class="row">
+                                            <h1 class="">Mina de hierro</h1>
+                                        </div>
+                                        <div class="row">
+                                            <h5 class="" id="descripcionMina">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
+                                            </br>
+                                        </div>
+                                        <div class="row">
+                                            <h5 class="" id="gananciaMina">Ganancia: +100</h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5 class="" id="tiempoMejoraMina">Tiempo de mejora: 30 min</h5>
+                                        </div>
+                                        <div class="row">
+                                            <h5 class="" id="costeMejoraMina">Coste de mejora:</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-0 text-right">
+                                        <h5 class="">Nivel: 5</h5>
+                
+                                        <button type="button" class="btn btn-link">Mejorar</button>
+                                    </div> 
+                                </div> 
+                
+                                <div class="row col-md-2  col-md-offset-10 ">
+                                    <a onclick="">
+                                        <button type="button" class="btn btn-primary col-md-12 " id="save">Mejorar</button>
+                                    </a> 
+                                    </br>   
+                                    </br>   
+                                    </br>   
+                
+                                </div>
+                                </br>   -->
             </div>
             <div class="panel panel-default col-md-10 col-md-offset-1">
                 </br></br>
                 <!--<div class="col-md-1 col-md-offset-0"></div>-->
-                <% 
-                
-                ClienteRecursosMinas minas = new ClienteRecursosMinas();
-                List coleccionMinas = minas.obtenerMinas(usuario.getEmail());
-                Iterator<Mina> i = coleccionMinas.iterator();
-                
-                while(i.hasNext()){ 
-                    Mina mina = i.next();
-                    int nivel = mina.getNivelMina();
-                    int iden = mina.getIdMina();
+                <%
+                    ClienteRecursosMinas minas = new ClienteRecursosMinas();
+                    List coleccionMinas = minas.obtenerMinas(usuario.getEmail());
+                    Iterator<Mina> i = coleccionMinas.iterator();
+
+                    while (i.hasNext()) {
+                        Mina mina = i.next();
+                        int nivel = mina.getNivelMina();
+                        //System.err.println("nivel While: " + nivel);
+                        int iden = mina.getIdMina();
                 %>
                 <div class="col-md-2 col-md-offset-0">
-                    <a onClick="ocultar(<%= nivel %>,<%= iden %>);">
+                    <a onclick="setIdMina(<%= iden%>, <%= nivel%>);">
                         <img src="img/minas/hierro1.png" class="img-responsive" alt="Responsive image">
-                        <h5 class="text-center">Nivel:<%= nivel %> </h5>
+                        <h5 class="text-center">Nivel: <%= nivel%> </h5>
                     </a>
                 </div>
                 <% }%>

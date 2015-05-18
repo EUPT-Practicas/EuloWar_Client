@@ -6,6 +6,7 @@
 package cliente_webservice;
 
 import operacionesminas_client.Mina;
+import operacionesminas_client.NivelMina;
 
 /**
  *
@@ -53,6 +54,12 @@ public class ClienteRecursosMinas {
         operacionesminas_client.ProducirRecursosMina service = new operacionesminas_client.ProducirRecursosMina();
         operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
         return port.obtenerMinas(email);
+    }
+
+    public NivelMina obtenerNivelMina(int nivelMina) {
+        operacionesminas_client.ProducirRecursosMina service = new operacionesminas_client.ProducirRecursosMina();
+        operacionesminas_client.OperacionesMinas port = service.getOperacionesMinasPort();
+        return port.obtenerNivelMina(nivelMina);
     }
     
   

@@ -24,42 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RestarRecursosResponse_QNAME = new QName("http://webservices/", "restarRecursosResponse");
     private final static QName _ObtenerRecursosResponse_QNAME = new QName("http://webservices/", "obtenerRecursosResponse");
-    private final static QName _RestarRecursos_QNAME = new QName("http://webservices/", "restarRecursos");
+    private final static QName _RestarRecursosResponse_QNAME = new QName("http://webservices/", "restarRecursosResponse");
     private final static QName _SumarRecursos_QNAME = new QName("http://webservices/", "sumarRecursos");
-    private final static QName _SumarRecursosResponse_QNAME = new QName("http://webservices/", "sumarRecursosResponse");
     private final static QName _ObtenerRecursos_QNAME = new QName("http://webservices/", "obtenerRecursos");
+    private final static QName _RestarRecursos_QNAME = new QName("http://webservices/", "restarRecursos");
+    private final static QName _SumarRecursosResponse_QNAME = new QName("http://webservices/", "sumarRecursosResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: operacionesRecursos_WS
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link ObtenerRecursos }
-     * 
-     */
-    public ObtenerRecursos createObtenerRecursos() {
-        return new ObtenerRecursos();
-    }
-
-    /**
-     * Create an instance of {@link RestarRecursos }
-     * 
-     */
-    public RestarRecursos createRestarRecursos() {
-        return new RestarRecursos();
-    }
-
-    /**
-     * Create an instance of {@link SumarRecursos }
-     * 
-     */
-    public SumarRecursos createSumarRecursos() {
-        return new SumarRecursos();
     }
 
     /**
@@ -71,11 +47,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ObtenerRecursosResponse }
+     * Create an instance of {@link RestarRecursos }
      * 
      */
-    public ObtenerRecursosResponse createObtenerRecursosResponse() {
-        return new ObtenerRecursosResponse();
+    public RestarRecursos createRestarRecursos() {
+        return new RestarRecursos();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerRecursos }
+     * 
+     */
+    public ObtenerRecursos createObtenerRecursos() {
+        return new ObtenerRecursos();
+    }
+
+    /**
+     * Create an instance of {@link SumarRecursos }
+     * 
+     */
+    public SumarRecursos createSumarRecursos() {
+        return new SumarRecursos();
     }
 
     /**
@@ -87,12 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RestarRecursosResponse }{@code >}}
+     * Create an instance of {@link ObtenerRecursosResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://webservices/", name = "restarRecursosResponse")
-    public JAXBElement<RestarRecursosResponse> createRestarRecursosResponse(RestarRecursosResponse value) {
-        return new JAXBElement<RestarRecursosResponse>(_RestarRecursosResponse_QNAME, RestarRecursosResponse.class, null, value);
+    public ObtenerRecursosResponse createObtenerRecursosResponse() {
+        return new ObtenerRecursosResponse();
     }
 
     /**
@@ -105,12 +96,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RestarRecursos }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RestarRecursosResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservices/", name = "restarRecursos")
-    public JAXBElement<RestarRecursos> createRestarRecursos(RestarRecursos value) {
-        return new JAXBElement<RestarRecursos>(_RestarRecursos_QNAME, RestarRecursos.class, null, value);
+    @XmlElementDecl(namespace = "http://webservices/", name = "restarRecursosResponse")
+    public JAXBElement<RestarRecursosResponse> createRestarRecursosResponse(RestarRecursosResponse value) {
+        return new JAXBElement<RestarRecursosResponse>(_RestarRecursosResponse_QNAME, RestarRecursosResponse.class, null, value);
     }
 
     /**
@@ -123,21 +114,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SumarRecursosResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservices/", name = "sumarRecursosResponse")
-    public JAXBElement<SumarRecursosResponse> createSumarRecursosResponse(SumarRecursosResponse value) {
-        return new JAXBElement<SumarRecursosResponse>(_SumarRecursosResponse_QNAME, SumarRecursosResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ObtenerRecursos }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservices/", name = "obtenerRecursos")
     public JAXBElement<ObtenerRecursos> createObtenerRecursos(ObtenerRecursos value) {
         return new JAXBElement<ObtenerRecursos>(_ObtenerRecursos_QNAME, ObtenerRecursos.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RestarRecursos }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "restarRecursos")
+    public JAXBElement<RestarRecursos> createRestarRecursos(RestarRecursos value) {
+        return new JAXBElement<RestarRecursos>(_RestarRecursos_QNAME, RestarRecursos.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SumarRecursosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservices/", name = "sumarRecursosResponse")
+    public JAXBElement<SumarRecursosResponse> createSumarRecursosResponse(SumarRecursosResponse value) {
+        return new JAXBElement<SumarRecursosResponse>(_SumarRecursosResponse_QNAME, SumarRecursosResponse.class, null, value);
     }
 
 }

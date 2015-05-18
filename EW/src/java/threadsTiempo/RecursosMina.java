@@ -7,7 +7,6 @@ package threadsTiempo;
 
 import asignarRecursos_WS.Mina;
 import cliente_webservice.ClienteRecursosMinas;
-import endpoints.RecursosEndpoint;
 import java.util.Timer;
 import java.util.TimerTask;
 
