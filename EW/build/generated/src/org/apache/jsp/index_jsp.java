@@ -61,6 +61,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">\r\n");
       out.write("        <script type=\"text/JavaScript\" src=\"js/websocket.js\"></script>\r\n");
       out.write("        <script type=\"text/JavaScript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js\"></script>\r\n");
+      out.write("        <script type=\"text/JavaScript\" src=\"js/websocket.js\"></script>\r\n");
       out.write("        <script type=\"text/JavaScript\">\r\n");
       out.write("            $(document).ready(function(){\r\n");
       out.write("                $(\"#mostrar\").on( \"click\", function() {\r\n");
