@@ -65,7 +65,6 @@ public class Alta extends HttpServlet {
                 String passEncript = EncriptaMD5.encriptarClave(password, nombreUsuario);
                 exitoRegistro = cra.crearUsuario(email, nombreUsuario, passEncript);
                 if (exitoRegistro) {
-
                     exitoRecursos = cra.asignarRecursos(email);
                     Mina m = cra.asignarMina(email);
                     if (exitoRecursos) {
@@ -77,17 +76,21 @@ public class Alta extends HttpServlet {
 
                         HttpSession nuevaSesion = request.getSession();
                         nuevaSesion.setAttribute("usuario", usuario);
-                        
-//                        ClienteRecursosMinas crm = new ClienteRecursosMinas();
-//                        System.out.println("RECURSOSOSOSOSOSOSOSOSOOS: " + crm.obtenerRecursos(email));
 
                         response.sendRedirect("general.jsp");
-                        System.out.println("pepe");
                     } else {
                         System.out.println("no asignados ");
                     }
                     System.err.println("USUARIO REGISTRADO CORRECTAMENTE");
                 }
+            }else{
+                //Ponemos error: "Ocurrio un error. Revisa los datos y prueba de nuevo."
+//                HttpSession nuevaSesion = request.getSession();
+//                nuevaSesion.setAttribute("err", "1");
+//                response.sendRedirect("index.jsp");
+                String mensaje = "Ocurrio un error. Revisa los datos y prueba de nuevo.";
+                request.setAttribute("mensaje", mensaje);
+                request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
             }
         }
     }

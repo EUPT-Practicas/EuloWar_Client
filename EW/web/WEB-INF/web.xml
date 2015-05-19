@@ -8,6 +8,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>conexiones.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NuevaMina</servlet-name>
+        <servlet-class>conexiones.NuevaMina</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Alta</servlet-name>
         <url-pattern>/Alta</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NuevaMina</servlet-name>
+        <url-pattern>/NuevaMina</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

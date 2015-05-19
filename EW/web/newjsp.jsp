@@ -40,7 +40,7 @@
 
             <section class="row">
 
-                <div  row="row">
+                <div  class="row">
 
                     <!--<img src="img/war1.png" class="img-responsive img-thumbnail col-md-4 col-md-offset-4" alt="Responsive image">--></br>
                     <div  class="panel panel-default col-md-4 col-md-offset-4">
@@ -55,7 +55,7 @@
                             </div>        
                         </div>
                         <!-- Formulario de inicio sesion -->
-                        <form id="uno"  class row role="form_registro"  action="Login" name="nombre" method="POST">
+                        <form id="uno" action="Login" name="nombre" method="POST">
                             <div class=" form-group">
                                 <label for="ejemplo_password_1">Usuario</label>
                                 <input type="text" class="form-control" placeholder="Nombre de usuario">
@@ -78,7 +78,7 @@
                             </br>
                         </form>
                         <!-- Formulario de registro  -->
-                        <form id="dos" role="form_alta" action="Alta" method="POST">
+                        <form id="dos" action="Alta" method="POST">
                             <h4 class="text-center">Nuevo usuario</h4>
                             <div  class="form-group">
                                 <label for="ejemplo_email_1">Email</label>

@@ -31,7 +31,7 @@
             }
 
             function setIdMina(_idMina, _nivelM) {
-                
+
                 $.ajax({
                     type: "POST",
                     url: "getInfoMina.jsp",
@@ -106,10 +106,20 @@
             <div class="panel panel-default col-md-10 col-md-offset-1">
                 </br></br>
                 <!--<div class="col-md-1 col-md-offset-0"></div>-->
+                <div class="col-md-2 col-md-offset-0">
+                    <form action="NuevaMina" method="POST">
+                        <!--                    <a onclick="nuevaMina();">-->
+<!--                        <img src="img/minas/nueva_mina.png" class="img-responsive" alt="Nueva mina">-->
+                        <input type="image" src="img/minas/nueva_mina.png" class="img-responsive" alt="Nueva mina">
+                        <h5 class="text-center">Añadir Mina</h5>
+                        <!--                    </a>-->
+                    </form>
+                </div>
                 <%
                     ClienteRecursosMinas minas = new ClienteRecursosMinas();
                     List coleccionMinas = minas.obtenerMinas(usuario.getEmail());
                     Iterator<Mina> i = coleccionMinas.iterator();
+                    System.err.println("Size: " + coleccionMinas.size());
 
                     while (i.hasNext()) {
                         Mina mina = i.next();
