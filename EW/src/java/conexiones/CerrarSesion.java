@@ -5,9 +5,6 @@
  */
 package conexiones;
 
-import Utilidades.EncriptaMD5;
-import cliente_webservice.ClienteRegistroAuth;
-import clientes_WS.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,9 +15,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Ricardo
+ * @author Sergio
  */
-public class Login extends HttpServlet {
+public class CerrarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,48 +31,12 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            request.setCharacterEncoding("UTF-8");
-            ClienteRegistroAuth cra = new ClienteRegistroAuth();
-            Usuario usuario;
-            boolean exitoLogin = false;
-
-            //Recoger los datos del formulario.
-            String nombreUsuario = request.getParameter("nombre");
-            String password = request.getParameter("password");
-
-            System.out.println("nom: " + nombreUsuario);
-            System.out.println("pass: " + password);
-            System.out.println("el nombre es " + nombreUsuario + " con passs " + password);
-//        
-//        System.out.println("¿El usuario entra?: " + comprobarLogin(nombre, password) );
-
-            if (!nombreUsuario.isEmpty() && nombreUsuario != null
-                    && !password.isEmpty() && password != null) {
-                System.out.println("el nombre en donde encripta es " + nombreUsuario);
-                String encriptada = EncriptaMD5.encriptarClave(password, nombreUsuario);
-                System.out.println("encriptada: " + encriptada);
-                exitoLogin = cra.comprobarLogin(nombreUsuario, encriptada);
-            }
-            String resultado;
-            if (exitoLogin) {
-                System.err.println("EL USUARIO EXISTE");
-                resultado = "EXISTE red";
-                usuario = (Usuario) cra.findUser(nombreUsuario);
-
-                HttpSession nuevaSesion = request.getSession();
-                nuevaSesion.setAttribute("usuario", usuario);
-
-                response.sendRedirect("./general.jsp");
-                //CUANDO TENGA EXITO TENGO QUE PASAR EL EMAIL A WEBSOCKET.JS
-            } else {
-                String mensaje = "Usuario y/o contraseña incorrectos.";
-                request.setAttribute("mensaje", mensaje);
-                request.setAttribute("tipo", "log");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-
-                resultado = "NO EXISTE";
-            }
+            System.out.println("ETRA A CERRAR SESSION");
+            HttpSession miSession = request.getSession();
+            miSession.invalidate();
+            response.sendRedirect("index.jsp");
         }
     }
 
@@ -91,7 +52,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -106,7 +67,6 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**

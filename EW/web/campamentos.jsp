@@ -10,7 +10,7 @@
     <head>
         <%@ include file='head.jsp' %>
     </head>
-    <body>
+    <body id="v_campamentos">
         <header>    
             <%@ include file='header.jsp' %>
         </header>
@@ -30,20 +30,20 @@
                 <div class="row">
              
                     <div class="col-md-5 col-md-offset-0">
-                        <div clas="row">
+                        <div class="row">
                             <h1 class="">Campamento</h1>
                         </div>
-                        <div clas="row">
+                        <div class="row">
                             <h5 class="">Descripción: Aqui una breve descripción de cual es us función el juego</h5>
                             </br>
                         </div>
-                        <div clas="row">
+                        <div class="row">
                             <h5 class="">Mejora de defensa: +100</h5>
                         </div>
-                        <div clas="row">
+                        <div class="row">
                             <h5 class="">Tiempo de mejora: 30 min</h5>
                         </div>
-                        <div clas="row">
+                        <div class="row">
                             <h5 class="">Coste de mejora: 5.000 Hierro</h5>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
    
                 </div>
             </div>
-        </div>
+
 
         <footer class="container">
             <%@ include file='footer.jsp' %>
@@ -88,5 +88,6 @@
              incluir archivos JavaScript individuales de los únicos
              plugins que utilices) -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/navbarscript.js"></script>
     </body>
 </html>

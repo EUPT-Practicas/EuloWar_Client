@@ -12,6 +12,10 @@
         <servlet-name>NuevaMina</servlet-name>
         <servlet-class>conexiones.NuevaMina</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CerrarSesion</servlet-name>
+        <servlet-class>conexiones.CerrarSesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Alta</servlet-name>
         <url-pattern>/Alta</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>NuevaMina</servlet-name>
         <url-pattern>/NuevaMina</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesion</servlet-name>
+        <url-pattern>/CerrarSesion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

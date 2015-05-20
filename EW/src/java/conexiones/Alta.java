@@ -76,6 +76,7 @@ public class Alta extends HttpServlet {
 
                         HttpSession nuevaSesion = request.getSession();
                         nuevaSesion.setAttribute("usuario", usuario);
+                        nuevaSesion.removeAttribute("err");
 
                         response.sendRedirect("general.jsp");
                     } else {
@@ -83,14 +84,23 @@ public class Alta extends HttpServlet {
                     }
                     System.err.println("USUARIO REGISTRADO CORRECTAMENTE");
                 }
-            }else{
+                
+                String mensaje = "El usuario ya esta registrado.";
+                request.setAttribute("mensaje", mensaje);
+                request.setAttribute("tipo", "reg");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+
+            } else {
                 //Ponemos error: "Ocurrio un error. Revisa los datos y prueba de nuevo."
 //                HttpSession nuevaSesion = request.getSession();
 //                nuevaSesion.setAttribute("err", "1");
 //                response.sendRedirect("index.jsp");
-                String mensaje = "Ocurrio un error. Revisa los datos y prueba de nuevo.";
+//                String mensaje = "Ocurrio un error. Revisa los datos y prueba de nuevo.";
+
+                String mensaje = "Las contraseñas deben ser iguales.";
                 request.setAttribute("mensaje", mensaje);
-                request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+                request.setAttribute("tipo", "reg");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }
     }

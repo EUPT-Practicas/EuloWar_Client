@@ -46,7 +46,7 @@
 
         </script>
     </head>
-    <body>
+    <body id="v_minas">
         <header>    
             <%@ include file='header.jsp' %>
         </header>
@@ -146,5 +146,6 @@
              incluir archivos JavaScript individuales de los únicos
              plugins que utilices) -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/navbarscript.js"></script>
     </body>
 </html>

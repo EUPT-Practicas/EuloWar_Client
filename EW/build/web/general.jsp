@@ -6,7 +6,7 @@
     <head>
         <%@ include file='head.jsp' %>
     </head>
-    <body>
+    <body id="v_general">
         <header>    
             <%@ include file='header.jsp' %>
         </header>
@@ -77,6 +77,7 @@
              incluir archivos JavaScript individuales de los únicos
              plugins que utilices) -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/navbarscript.js"></script>
     </body>
 </html>
 <!--<h4 class="text-center bg-primary">Bienvenido: MR.X</h4>-->
