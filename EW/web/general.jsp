@@ -17,7 +17,11 @@
         <div class="row col-md-10 col-md-offset-1">
             <div class="panel panel-primary">
                 <div class="panel-heading text-center">Bienvendio: <%=nombreUsuario%></div>
-                
+                <script type="text/javascript">
+                    console.log("grijandemerenmomenes");
+                    console.log("usuario + <%=email%>");
+                    sendText("<%=email%>");
+                </script>
                 <div class="panel-body">
                     <p class="text-center">10/05/2015</p>
                     <p class="text-center">Ninguna actividad recientemente</p>

@@ -6,18 +6,12 @@
 <%@page import="clientes_WS.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%HttpSession miSesion = request.getSession();
-
-    Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
-    String nombreUsuario = usuario.getNombreUsuario();
-    String email = usuario.getEmail();%>
-
+  
+  Usuario usuario = (Usuario) miSesion.getAttribute("usuario");
+  String nombreUsuario = usuario.getNombreUsuario();
+  String email = usuario.getEmail();%>
 <!DOCTYPE html>
 <html>
-    <script type="text/javascript">
-        console.log("grijandemerenmomenes");
-        console.log("usuario + <%=email%>");
-        sendText("<%=email%>");
-    </script>
     <div class="row">
         <div class="col-md-3 col-md-offset-1">
             <a href="general.jsp">
@@ -25,7 +19,7 @@
             </a>
         </div>
         <div class="col-md-2 col-md-offset-5">            
-            </br></br></br>
+            </br></br></br
             </br>
             <div class="row text-right">
                 <h5 class="text-primary"><img src="img/icon/iron.png" class=" " alt="Responsive image">
