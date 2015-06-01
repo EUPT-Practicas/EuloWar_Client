@@ -24,13 +24,13 @@ public class ProducirRecursosMina
 
     private final static URL PRODUCIRRECURSOSMINA_WSDL_LOCATION;
     private final static WebServiceException PRODUCIRRECURSOSMINA_EXCEPTION;
-    private final static QName PRODUCIRRECURSOSMINA_QNAME = new QName("http://webservices/", "OperacionesMinas");
+    private final static QName PRODUCIRRECURSOSMINA_QNAME = new QName("http://webservices/", "ProducirRecursosMina");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/OperacionesMinas/OperacionesMinas?WSDL");
+            url = new URL("http://localhost:8080/ProducirRecursosMina/OperacionesMinas?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

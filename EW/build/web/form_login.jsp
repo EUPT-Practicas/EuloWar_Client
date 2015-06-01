@@ -22,7 +22,7 @@
     </br>
     <h5 class="text-center">
         <!--FALTA EL FORM / JS PARA RECUPERAR PASSS-->
-        <a onClick="">¿Has olvidado tu contraseña?</a>
+        <a onClick="mostrarRecuperar();">¿Has olvidado tu contraseña?</a>
     </h5>
     <h5 class="text-center">
         ¿No tienes cuenta?

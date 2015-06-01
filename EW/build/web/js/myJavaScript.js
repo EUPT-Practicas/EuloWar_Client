@@ -40,6 +40,17 @@ function mostrarLogin() {
         }
     });
 }
+function mostrarRecuperar() {
+    ocultarError();
+    $.ajax({
+        type: "POST",
+        url: "form_recuperar.jsp",
+        success: function (msg) {
+            $('#formularios').empty();
+            $('#formularios').html(msg);
+        }
+    });
+}
 
 function mostrarErrorLogin(_mensaje, _tipo) {
     if (_tipo === 'reg') {

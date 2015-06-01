@@ -59,8 +59,8 @@ public interface ServiceRegistroAutenticacion {
 
     /**
      * 
-     * @param emailUsuario
      * @param passwordUsuario
+     * @param emailUsuario
      * @param nombreUsuario
      * @return
      *     returns boolean
