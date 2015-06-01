@@ -26,7 +26,7 @@
     </h5>
     <h5 class="text-center">
         ¿No tienes cuenta?
-        <a onClick="mostrarRegistro();"> Registrate</a>
+        <a onClick="mostrarRegistro();" type="button"> Registrate</a>
     </h5>
     </br>
 </form>

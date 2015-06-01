@@ -26,18 +26,18 @@ public interface AsignarRecursosInicio {
 
     /**
      * 
-     * @param email
+     * @param emailUsuario
      * @return
-     *     returns boolean
+     *     returns java.lang.Boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "asignarRecursos", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarRecursos")
     @ResponseWrapper(localName = "asignarRecursosResponse", targetNamespace = "http://webservices/", className = "asignarRecursos_WS.AsignarRecursosResponse")
     @Action(input = "http://webservices/AsignarRecursosInicio/asignarRecursosRequest", output = "http://webservices/AsignarRecursosInicio/asignarRecursosResponse")
-    public boolean asignarRecursos(
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
+    public Boolean asignarRecursos(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario);
 
     /**
      * 

@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="emailUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nombreUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="passwordUsuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,38 +29,38 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "crearUsuario", propOrder = {
-    "email",
+    "emailUsuario",
     "nombreUsuario",
-    "password"
+    "passwordUsuario"
 })
 public class CrearUsuario {
 
-    protected String email;
+    protected String emailUsuario;
     protected String nombreUsuario;
-    protected String password;
+    protected String passwordUsuario;
 
     /**
-     * Obtiene el valor de la propiedad email.
+     * Obtiene el valor de la propiedad emailUsuario.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEmail() {
-        return email;
+    public String getEmailUsuario() {
+        return emailUsuario;
     }
 
     /**
-     * Define el valor de la propiedad email.
+     * Define el valor de la propiedad emailUsuario.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEmail(String value) {
-        this.email = value;
+    public void setEmailUsuario(String value) {
+        this.emailUsuario = value;
     }
 
     /**
@@ -88,27 +88,27 @@ public class CrearUsuario {
     }
 
     /**
-     * Obtiene el valor de la propiedad password.
+     * Obtiene el valor de la propiedad passwordUsuario.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPassword() {
-        return password;
+    public String getPasswordUsuario() {
+        return passwordUsuario;
     }
 
     /**
-     * Define el valor de la propiedad password.
+     * Define el valor de la propiedad passwordUsuario.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPassword(String value) {
-        this.password = value;
+    public void setPasswordUsuario(String value) {
+        this.passwordUsuario = value;
     }
 
 }

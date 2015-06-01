@@ -128,7 +128,7 @@
                         int iden = mina.getIdMina();
                 %>
                 <div class="col-md-2 col-md-offset-0">
-                    <a onclick="setIdMina(<%= iden%>, <%= nivel%>);">
+                    <a href="#" onclick="setIdMina(<%= iden%>, <%= nivel%>);">
                         <img src="img/minas/hierro1.png" class="img-responsive" alt="Responsive image">
                         <h5 class="text-center">Nivel: <%= nivel%> </h5>
                     </a>

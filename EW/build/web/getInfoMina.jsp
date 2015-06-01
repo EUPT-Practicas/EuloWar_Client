@@ -68,10 +68,11 @@
     <%if (Integer.valueOf(nivelActualmina) <= 5) {%>
     <a onclick="">
         <button type="button" class="btn btn-primary col-md-12 " id="save">Mejorar</button>
-    </a> <%} else {%>
-    <a onclick="">
+    </a> <%} //else {%>
+<!--    <a onclick="">
         <button type="button" class="btn btn-danger col-md-12 " id="save" disabled="">Mejorar</button>
-    </a><%}%>
+    </a>-->
+    <%//}%>
     </br>   
     </br>   
     </br>   

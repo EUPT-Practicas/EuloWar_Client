@@ -27,6 +27,21 @@ public interface OperacionesMinas {
 
     /**
      * 
+     * @param idMina
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "producirRecursos", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursos")
+    @ResponseWrapper(localName = "producirRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursosResponse")
+    @Action(input = "http://webservices/OperacionesMinas/producirRecursosRequest", output = "http://webservices/OperacionesMinas/producirRecursosResponse")
+    public boolean producirRecursos(
+        @WebParam(name = "idMina", targetNamespace = "")
+        int idMina);
+
+    /**
+     * 
      * @param nivelMina
      * @return
      *     returns operacionesminas_client.NivelMina
@@ -42,18 +57,18 @@ public interface OperacionesMinas {
 
     /**
      * 
-     * @param idMina
+     * @param emailUsuario
      * @return
-     *     returns boolean
+     *     returns operacionesminas_client.Mina
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "producirRecursos", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursos")
-    @ResponseWrapper(localName = "producirRecursosResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.ProducirRecursosResponse")
-    @Action(input = "http://webservices/OperacionesMinas/producirRecursosRequest", output = "http://webservices/OperacionesMinas/producirRecursosResponse")
-    public boolean producirRecursos(
-        @WebParam(name = "idMina", targetNamespace = "")
-        int idMina);
+    @RequestWrapper(localName = "asignarMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.AsignarMina")
+    @ResponseWrapper(localName = "asignarMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.AsignarMinaResponse")
+    @Action(input = "http://webservices/OperacionesMinas/asignarMinaRequest", output = "http://webservices/OperacionesMinas/asignarMinaResponse")
+    public Mina asignarMina(
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario);
 
     /**
      * 
@@ -84,20 +99,5 @@ public interface OperacionesMinas {
     public boolean mejorarMina(
         @WebParam(name = "idMina", targetNamespace = "")
         int idMina);
-
-    /**
-     * 
-     * @param emailUsuario
-     * @return
-     *     returns operacionesminas_client.Mina
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "asignarMina", targetNamespace = "http://webservices/", className = "operacionesminas_client.AsignarMina")
-    @ResponseWrapper(localName = "asignarMinaResponse", targetNamespace = "http://webservices/", className = "operacionesminas_client.AsignarMinaResponse")
-    @Action(input = "http://webservices/OperacionesMinas/asignarMinaRequest", output = "http://webservices/OperacionesMinas/asignarMinaResponse")
-    public Mina asignarMina(
-        @WebParam(name = "emailUsuario", targetNamespace = "")
-        String emailUsuario);
 
 }

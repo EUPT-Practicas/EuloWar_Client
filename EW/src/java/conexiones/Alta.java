@@ -7,7 +7,6 @@ package conexiones;
 
 import Utilidades.EncriptaMD5;
 import asignarRecursos_WS.Mina;
-import cliente_webservice.ClienteRecursosMinas;
 import cliente_webservice.ClienteRegistroAuth;
 import clientes_WS.Usuario;
 import java.io.IOException;
@@ -54,10 +53,6 @@ public class Alta extends HttpServlet {
             String passwordRepit = request.getParameter("passwordRepit");
             System.out.println(email + nombreUsuario + password);
 
-//        if(password.equals(passwordRepit)){
-//            //System.out.println( email + " "+ nombre + " "+ password + " "+ passwordRepit);
-//            System.out.println("\t\t - El resultado es: " + crearUsuario(email, nombre, password));
-//        } 
             //Si los datos NO son vacios
             //Comprobamos las password
             if (password.equals(passwordRepit)) {
@@ -85,10 +80,12 @@ public class Alta extends HttpServlet {
                     System.err.println("USUARIO REGISTRADO CORRECTAMENTE");
                 }
                 
+                if(!exitoRegistro){
                 String mensaje = "El usuario ya esta registrado.";
                 request.setAttribute("mensaje", mensaje);
                 request.setAttribute("tipo", "reg");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
 
             } else {
                 //Ponemos error: "Ocurrio un error. Revisa los datos y prueba de nuevo."

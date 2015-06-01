@@ -26,7 +26,25 @@ public interface ServiceRegistroAutenticacion {
 
     /**
      * 
-     * @param nomUsuario
+     * @param passwordUsuario
+     * @param nombreUsuario
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "comprobarLogin", targetNamespace = "http://webservices/", className = "clientes_WS.ComprobarLogin")
+    @ResponseWrapper(localName = "comprobarLoginResponse", targetNamespace = "http://webservices/", className = "clientes_WS.ComprobarLoginResponse")
+    @Action(input = "http://webservices/ServiceRegistroAutenticacion/comprobarLoginRequest", output = "http://webservices/ServiceRegistroAutenticacion/comprobarLoginResponse")
+    public Boolean comprobarLogin(
+        @WebParam(name = "nombreUsuario", targetNamespace = "")
+        String nombreUsuario,
+        @WebParam(name = "passwordUsuario", targetNamespace = "")
+        String passwordUsuario);
+
+    /**
+     * 
+     * @param nombreUsuario
      * @return
      *     returns clientes_WS.Usuario
      */
@@ -36,13 +54,13 @@ public interface ServiceRegistroAutenticacion {
     @ResponseWrapper(localName = "findUserResponse", targetNamespace = "http://webservices/", className = "clientes_WS.FindUserResponse")
     @Action(input = "http://webservices/ServiceRegistroAutenticacion/findUserRequest", output = "http://webservices/ServiceRegistroAutenticacion/findUserResponse")
     public Usuario findUser(
-        @WebParam(name = "nomUsuario", targetNamespace = "")
-        String nomUsuario);
+        @WebParam(name = "nombreUsuario", targetNamespace = "")
+        String nombreUsuario);
 
     /**
      * 
-     * @param email
-     * @param password
+     * @param emailUsuario
+     * @param passwordUsuario
      * @param nombreUsuario
      * @return
      *     returns boolean
@@ -53,29 +71,11 @@ public interface ServiceRegistroAutenticacion {
     @ResponseWrapper(localName = "crearUsuarioResponse", targetNamespace = "http://webservices/", className = "clientes_WS.CrearUsuarioResponse")
     @Action(input = "http://webservices/ServiceRegistroAutenticacion/crearUsuarioRequest", output = "http://webservices/ServiceRegistroAutenticacion/crearUsuarioResponse")
     public boolean crearUsuario(
-        @WebParam(name = "email", targetNamespace = "")
-        String email,
+        @WebParam(name = "emailUsuario", targetNamespace = "")
+        String emailUsuario,
         @WebParam(name = "nombreUsuario", targetNamespace = "")
         String nombreUsuario,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param password
-     * @param nombreUsuario
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "comprobarLogin", targetNamespace = "http://webservices/", className = "clientes_WS.ComprobarLogin")
-    @ResponseWrapper(localName = "comprobarLoginResponse", targetNamespace = "http://webservices/", className = "clientes_WS.ComprobarLoginResponse")
-    @Action(input = "http://webservices/ServiceRegistroAutenticacion/comprobarLoginRequest", output = "http://webservices/ServiceRegistroAutenticacion/comprobarLoginResponse")
-    public boolean comprobarLogin(
-        @WebParam(name = "nombreUsuario", targetNamespace = "")
-        String nombreUsuario,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
+        @WebParam(name = "passwordUsuario", targetNamespace = "")
+        String passwordUsuario);
 
 }
